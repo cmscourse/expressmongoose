@@ -1,0 +1,8 @@
+
+how to deploy to heroku
+
+* set mongoconnect to process.env.MONGOHQ_URL
+* set listen to process.env.PORT
+  heroku create --stack cedar thisapp
+  heroku addons:add mongohq:free
+
