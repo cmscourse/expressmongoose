@@ -3,7 +3,7 @@
     mongoose = require 'mongoose'
     request = require 'request'
 
-    mongoose.connect process.env.MONGOHQ_URL or 'mongodb://127.0.0.1/sampledb'
+    mongoose.connect process.env.MONGOHQ_URL or 'mongodb://127.0.0.1/briandb'
 
     Schema = mongoose.Schema
     ObjectId = Schema.ObjectID
@@ -32,8 +32,6 @@
     app.set 'view engine', 'jade'
     app.set 'views', __dirname + '/views'
     app.use express.static __dirname + '/public'
-
-
 
     getAll = []
 
@@ -65,7 +63,7 @@
         res.json doc
 
 
-    app.get '/addproject/:project_title', (req, res) ->
+    app.post '/addproject/:project_title', (req, res) ->
       project_data =
         project_title: req.params.project_title
 
