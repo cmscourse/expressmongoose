@@ -40,7 +40,7 @@
 
   Project = mongoose.model('Project', Project);
 
-  app.set('view engine', 'jade');
+  app.set('view engine', 'ejs');
 
   app.set('views', __dirname + '/views');
 
@@ -101,6 +101,9 @@
       return res.json(data);
     });
   });
+  app.get('/responsive', function(req,res){
+    res.render('responsive')
+  })
 
   app.get('/show/:id', function(req, res) {
     return Project.findOne({
