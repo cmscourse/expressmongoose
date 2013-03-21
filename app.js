@@ -66,15 +66,30 @@
     });
   };
 
+  app.get('/testpage', function (req,res){
+    res.render('testpage')
+  })
+
+  app.get('/singleproject', function(req, res) {
+    Project.find({}, function(err, dat) {
+      res.json(dat);
+    });
+  });
+
   app.get('/', function(req, res) {
-    return Project.find({}, function(errdor, data) {
-      return res.json(data);
+    Project.find({}, function(err, dat) {
+      res.json(dat);
     });
   });
 
   app.get('/all', getAll.projects);
+  app.get('/greet/:name', function(req,res){
+    res.render('greet', {
+      name: req.params.name
+    })
+  })
 
-  app.get('/remove/:id', function(req, res) {
+  app.delete('/remove/:id', function(req, res) {
     Project.find({
       _id: req.params.id
     }).remove();
