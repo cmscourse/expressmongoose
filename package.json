@@ -20,9 +20,12 @@
     "underscore": "",
     "oauth": "",
     "request": "",
-    "redis-url": "0.0.1"
+    "redis-url": "0.0.1",
+    "passport": "~0.1.16",
+    "passport-local": "~0.1.6"
   },
   "devDependencies": {
-    "ejs": "~0.8.3"
+    "ejs": "~0.8.3",
+    "connect-flash": "~0.1.0"
   }
 }
