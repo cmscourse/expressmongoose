@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "ejs": "~0.8.3",
-    "connect-flash": "~0.1.0"
+    "connect-flash": "~0.1.0",
+    "cloudinary": "~1.0.2"
   }
 }

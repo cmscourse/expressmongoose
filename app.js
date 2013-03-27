@@ -8,7 +8,7 @@
   , flash = require('connect-flash')
   , passport = require('passport')
   , util = require('util')
-  , LocalStrategy = require('passport-local').Strategy;
+  , LocalStrategy = require('passport-local').Strategy
   , routes = require('./routes')
   , user = require('./routes/user')
   , http = require('http')
