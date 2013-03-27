@@ -17,6 +17,8 @@
   , fs = require('fs')
   , crypto = require('crypto')
 
+  app.locals.title = "Brian's Awesome Gallery";
+
 
  var users = [
     { id: 1, username: 'bob', password: 'secret', email: 'bob@example.com' }
