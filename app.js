@@ -107,7 +107,7 @@ passport.use(new LocalStrategy(
 
   Project = mongoose.model('Project', Project);
 
-  app.set('view engine', 'ejs');
+  app.set('view engine', 'jade');
   app.set('views', __dirname + '/views');
   app.use(express["static"](__dirname + '/public'));
   app.use(express.logger());
