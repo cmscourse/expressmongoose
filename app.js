@@ -108,11 +108,8 @@ passport.use(new LocalStrategy(
   Project = mongoose.model('Project', Project);
 
   app.set('view engine', 'ejs');
-
   app.set('views', __dirname + '/views');
-
   app.use(express["static"](__dirname + '/public'));
-
   app.use(express.logger());
   app.use(express.cookieParser());
   app.use(express.bodyParser());
@@ -125,6 +122,10 @@ passport.use(new LocalStrategy(
   app.use(passport.session());
   app.use(app.router);
 
+app.configure('development', function(){
+  app.use(express.errorHandler());
+  cloudinary.config({ cloud_name: 'by', api_key: 'foo', api_secret: 'foo' });
+});
 
 
 
@@ -148,7 +149,26 @@ passport.use(new LocalStrategy(
     });
   };
 
-  app.get('/', function(req, res){
+
+app.locals.api_key = cloudinary.config().api_key;
+app.locals.cloud_name = cloudinary.config().cloud_name;
+
+app.get('/cloud', function(req, res, next){
+  cloudinary.api.resources(function(items){
+    res.render('cloudinary', { images: items.resources, cloudinary: cloudinary });
+  });
+});
+
+app.post('/upload', function(req, res){
+  var imageStream = fs.createReadStream(req.files.image.path, { encoding: 'binary' })
+    , cloudStream = cloudinary.uploader.upload_stream(function() { res.redirect('/'); });
+
+  imageStream.on('data', cloudStream.write).on('end', cloudStream.end);
+});
+
+
+
+app.get('/', function(req, res){
   res.render('index', { user: req.user });
 });
 
