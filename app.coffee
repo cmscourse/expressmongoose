@@ -68,10 +68,10 @@
       Project.findOne {page_name: 'home'}, (error, data) ->
         res.render 'layout.jade',{type: data.project_title}
 
-    app.post '/home/:project_title', (req,res) ->
-      Project.findOne({page_name: 'home'}).remove()
+    app.post '/:pagename/:project_title', (req,res) ->
+      Project.findOne({page_name: req.params.pagename}).remove()
       project_data =
-        page_name: 'home'
+        page_name: req.params.pagename
         project_title: req.params.project_title
       project = new Project(project_data)
       project.save (error, data) ->
