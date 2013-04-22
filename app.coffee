@@ -21,6 +21,8 @@
         type: String
         required: true
         trim: true
+      page_name:
+        type: String
       clients: [Client]
       shoe_size: Number
       eye_color: String
@@ -62,13 +64,14 @@
       Project.findOne { _id: req.params.id },(error, doc) ->
         res.json doc
 
-    app.get '/pagecontent', (req, res) ->
-      Project.findOne {_id: '514a35015993b5f82f000003'}, (error, data) ->
+    app.get '/home', (req, res) ->
+      Project.findOne {page_name: 'home'}, (error, data) ->
         res.render 'layout.jade',{type: data.project_title}
 
 
-    app.post '/addproject/:project_title', (req, res) ->
+    app.post '/addproject/:page_name/:project_title', (req, res) ->
       project_data =
+        page_name: req.params.page_name
         project_title: req.params.project_title
 
       project = new Project(project_data)
