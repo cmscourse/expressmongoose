@@ -35,7 +35,7 @@
 
     getAll = []
 
-    getAll.projects = (req,res) -># {{{
+    getAll.projects = (req,res) ->#  {{{
       res.render 'layout.jade', {type:'foo'}
 
     getAll.music = (req,res) ->
@@ -61,6 +61,10 @@
     app.get '/show/:id', (req,res) ->
       Project.findOne { _id: req.params.id },(error, doc) ->
         res.json doc
+
+    app.get '/pagecontent', (req, res) ->
+      Project.findOne {_id: '514a35015993b5f82f000003'}, (error, data) ->
+        res.render 'layout.jade',{type: data.project_title}
 
 
     app.post '/addproject/:project_title', (req, res) ->
