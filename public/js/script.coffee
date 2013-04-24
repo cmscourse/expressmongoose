@@ -4,19 +4,21 @@ saveNewData = (newData) ->
         type:'post'
         success: (e) ->
             console.log e.project_title
-            $('h1').empty().html e.project_title
+            $('p').empty().html e.project_title
 
-saveFormData = ->
+btnClickEvent = ->
     $('body').on 'click', 'button', ->
-        saveNewData $('input').val()
+        saveNewData $('textarea').val()
 
-saveFormData()
+btnClickEvent()
 
-$('input,button').hide()
+$('textarea,button').hide()
 
 changeTxtNode = ->
-    $('body').on 'click' ,'h1', ->
-        $('input,button').show()
+    $('body').on 'click' ,'p', ->
+        $('textarea,button').show()
+        $text = $('p').text()
+        $('textarea').append($text)
 changeTxtNode()
 
 

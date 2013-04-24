@@ -50,6 +50,9 @@
       Project.find {},(errdor, data) ->
         res.json data
 
+    app.get '/bootswatch', (req,res) ->
+      res.render 'responsive'
+
     app.get '/all', getAll.projects
 
     app.get '/remove/:id', (req,res) ->
