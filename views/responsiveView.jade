@@ -1,0 +1,99 @@
+!!! 5
+html(lang='en')
+head
+  meta(charset='utf-8')
+  title Bootswatch: Amelia
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  meta(name='description', content='Sweet and cheery.')
+  meta(name='author', content='Thomas Park')
+  //if lt IE 9
+    script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
+  link(href='./css/bootstrap.min.css', rel='stylesheet')
+  link(href='./css/bootstrap-responsive.min.css', rel='stylesheet')
+  link(href='./css/font-awesome.min.css', rel='stylesheet')
+  link(href='./css/bootswatch.css', rel='stylesheet')
+  body#top.preview(data-spy='scroll', data-target='.subnav', data-offset='80')
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.brand(href='../') Bootswatch
+          #main-menu.nav-collapse.collapse
+            ul#main-menu-left.nav
+              li
+                a(onclick='pageTracker._link(this.href); return false;', href='http://news.bootswatch.com') News
+              li
+                a#swatch-link(href='../#gallery') Gallery
+              li.dropdown
+                a.dropdown-toggle(data-toggle='dropdown', href='#')
+                  | Preview
+                  b.caret
+                ul#swatch-menu.dropdown-menu
+                  li
+                    a(href='../default') Default
+                  li.divider
+                  li
+                    a(href='../amelia') Amelia
+                  li
+                    a(href='../cerulean') Cerulean
+                  li
+                    a(href='../cosmo') Cosmo
+                  li
+                    a(href='../cyborg') Cyborg
+                  li
+                    a(href='../journal') Journal
+                  li
+                    a(href='../readable') Readable
+                  li
+                    a(href='../simplex') Simplex
+                  li
+                    a(href='../slate') Slate
+                  li
+                    a(href='../spacelab') Spacelab
+                  li
+                    a(href='../spruce') Spruce
+                  li
+                    a(href='../superhero') Superhero
+                  li
+                    a(href='../united') United
+              li#preview-menu.dropdown
+                a.dropdown-toggle(data-toggle='dropdown', href='#')
+                  | Download
+                  b.caret
+                ul.dropdown-menu
+                  li
+                    a(target='_blank', href='bootstrap.min.css') bootstrap.min.css
+                  li
+                    a(target='_blank', href='bootstrap.css') bootstrap.css
+                  li.divider
+                  li
+                    a(target='_blank', href='variables.less') variables.less
+                  li
+                  a(target='_blank', href='bootswatch.less') bootswatch.less
+            ul#main-menu-right.nav.pull-right
+              li
+                a(rel='tooltip', target='_blank', href='http://builtwithbootstrap.com/', title='Showcase of Bootstrap sites & apps', onclick='_gaq.push([\'_trackEvent\', \'click\', \'outbound\', \'builtwithbootstrap\']);')
+                  | Built With Bootstrap
+                  i.icon-share-alt
+              li
+                a(rel='tooltip', target='_blank', href='https://wrapbootstrap.com/?ref=bsw', title='Marketplace for premium Bootstrap templates', onclick='_gaq.push([\'_trackEvent\', \'click\', \'outbound\', \'wrapbootstrap\']);')
+                  | WrapBootstrap
+                  i.icon-share-alt
+
+    p#paragraphContent #{type}
+    textarea
+    button save
+    div#album
+
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js')
+    script(src='//raw.github.com/jashkenas/coffee-script/master/extras/coffee-script.js')
+    script(type='text/coffeescript', src='/js/script.coffee')
+
+       Placed at the end of the document so the pages load faster
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
+    script(src='../js/jquery.smooth-scroll.min.js')
+    script(src='../js/bootstrap.min.js')
+    script(src='../js/bootswatch.js')
