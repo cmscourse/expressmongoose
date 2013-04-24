@@ -1,10 +1,15 @@
+
+hideForm = ->
+  $('textarea,button').hide()
+hideForm()
+
 saveNewData = (newData) ->
     req = $.ajax
         url:'/home/' + newData
         type:'post'
         success: (e) ->
-            console.log e.project_title
             $('p').empty().html e.project_title
+            hideForm()
 
 btnClickEvent = ->
     $('body').on 'click', 'button', ->
@@ -12,7 +17,6 @@ btnClickEvent = ->
 
 btnClickEvent()
 
-$('textarea,button').hide()
 
 changeTxtNode = ->
     $('body').on 'click' ,'p', ->

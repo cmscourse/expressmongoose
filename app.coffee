@@ -51,7 +51,8 @@
         res.json data
 
     app.get '/bootswatch', (req,res) ->
-      res.render 'responsiveView'
+      Project.findOne {page_name: 'home'}, (error, data) ->
+        res.render 'responsiveView',{type: data.project_title}
 
     app.get '/all', getAll.projects
 

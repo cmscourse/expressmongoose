@@ -1,3 +1,7 @@
+textarea{
+  width:90%;
+  height:250px;
+}
 section {
 	margin-top: 60px;
 	padding-top: 100px;
@@ -287,7 +291,7 @@ body .one .bsa_it_p {
 }
 
 /* subnav */
- 
+
 .subnav {
 	margin-bottom: 60px;
 	width: 100%;
@@ -306,11 +310,11 @@ body .one .bsa_it_p {
 	-moz-border-radius: 4px;
 	border-radius: 4px;
 }
- 
+
 .subnav .nav {
 	margin-bottom: 0;
 }
- 
+
 .subnav .nav > li > a {
 	margin: 0;
 	padding-top:    11px;
@@ -321,7 +325,7 @@ body .one .bsa_it_p {
 	-moz-border-radius: 0;
 	border-radius: 0;
 }
- 
+
 .subnav .nav > .active > a,
 .subnav .nav > .active > a:hover {
 	padding-left: 13px;
@@ -333,12 +337,12 @@ body .one .bsa_it_p {
 	-moz-box-shadow: inset 0 3px 5px rgba(0,0,0,.05);
 	box-shadow: inset 0 3px 5px rgba(0,0,0,.05);
 }
- 
+
 .subnav .nav > .active > a .caret,
 .subnav .nav > .active > a:hover .caret {
 	border-top-color: #777;
 }
- 
+
 .subnav .nav > li:first-child > a,
 .subnav .nav > li:first-child > a:hover {
 	border-left: 0;
@@ -347,19 +351,19 @@ body .one .bsa_it_p {
 	-moz-border-radius: 4px 0 0 4px;
 	border-radius: 4px 0 0 4px;
 }
- 
+
 .subnav .nav > li:last-child > a {
 	border-right: 0;
 }
- 
+
 .subnav .dropdown-menu {
 	-webkit-border-radius: 0 0 4px 4px;
 	-moz-border-radius: 0 0 4px 4px;
 	border-radius: 0 0 4px 4px;
 }
- 
+
 @media (max-width: 767px) {
- 
+
 	.subnav {
 		position: static;
 		top: auto;
@@ -371,19 +375,19 @@ body .one .bsa_it_p {
 		-moz-box-shadow: none;
 		box-shadow: none;
 	}
- 
+
 	.subnav .nav > li {
 		float: none;
 	}
- 
+
 	.subnav .nav > li > a {
 		border: 0;
 	}
- 
+
 	.subnav .nav > li + li > a {
 		border-top: 1px solid #e5e5e5;
 	}
- 
+
 	.subnav .nav > li:first-child > a,
 	.subnav .nav > li:first-child > a:hover {
 		-webkit-border-radius: 4px 4px 0 0;
@@ -391,9 +395,9 @@ body .one .bsa_it_p {
 		border-radius: 4px 4px 0 0;
 	}
 }
- 
+
 @media (min-width: 980px) {
-  
+
 	.subnav-fixed {
 		position: fixed;
 		top: 40px;
@@ -410,13 +414,13 @@ body .one .bsa_it_p {
 		box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1);
 		filter: progid:DXImageTransform.Microsoft.gradient(enabled=false); /* IE6-9 */
 	}
-  
+
 	.subnav-fixed .nav {
 		width: 938px;
 		margin: 0 auto;
 		padding: 0 1px;
 	}
-  
+
 	.subnav .nav > li:first-child > a,
 	.subnav .nav > li:first-child > a:hover {
 		-webkit-border-radius: 0;
@@ -424,9 +428,9 @@ body .one .bsa_it_p {
 		border-radius: 0;
 	}
 }
- 
+
 @media (min-width: 1210px) {
- 
+
 	.subnav-fixed .nav {
 		width: 1168px; /* 2px less to account for left/right borders being removed when in fixed mode */
 	}
