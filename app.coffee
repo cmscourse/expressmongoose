@@ -51,7 +51,7 @@
         res.json data
 
     app.get '/bootswatch', (req,res) ->
-      res.render 'responsive'
+      res.render 'responsiveView'
 
     app.get '/all', getAll.projects
 
